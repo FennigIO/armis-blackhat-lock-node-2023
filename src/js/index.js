@@ -6,6 +6,9 @@
     const form = document.getElementById('form');
     const input = document.getElementById('input');
     const arrow = document.getElementById('arrow');
+    const unlockBtn = document.getElementById('unlock');
+    const lockBtn = document.getElementById('lock');
+    const codeText = document.getElementById('code-text');
 
     let isSubmitted = false;
 
@@ -58,15 +61,46 @@
         }
     }
 
-    
-    modal.addEventListener('click', hideModal);
-
-    form.addEventListener('submit', submitForm);
-
-    input.addEventListener('input', (e) => {
+    const lockSafe = (e) => {
         e.preventDefault();
-        clearInput();
-    });
+        socket.emit('trigger-lock');
+    }
+
+    const unlockSafe = (e) => {
+        e.preventDefault();
+        socket.emit('trigger-unlock');
+    }
+
+    const displayCodeSent = (code) => {
+        if (codeText) {
+            codeText.innerHTML = code;
+        }
+    }
+
+    if (lockBtn) {
+        lockBtn.addEventListener('click', lockSafe);
+    }
+    
+    if (unlockBtn) {
+        unlockBtn.addEventListener('click', unlockSafe);
+    }
+    
+    if (modal) {
+        modal.addEventListener('click', hideModal);
+    }
+
+    if (form) {
+        form.addEventListener('submit', submitForm);
+    }
+
+    if (input) {
+        input.addEventListener('input', (e) => {
+            e.preventDefault();
+            clearInput();
+        });
+    }
 
     socket.on('validate-response', validateRespone);
+    
+    socket.on('code-entered', displayCodeSent);
 })()

@@ -151,3 +151,30 @@ body {
 .modal-body{
     font-size: 1.5em;
 }
+
+.lock-btn{
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    font-size: 2em;
+    color: #FFF;
+}
+
+#unlock {
+    background-color: green;
+}
+
+#lock {
+    background-color: red;
+}
+
+.code-title{
+    color: #FFF;
+    font-size: 2em;
+    width: 100%;
+}
+#code-text{
+    color: #FFF;
+    font-size: 2em;
+    width: 100%;
+}
