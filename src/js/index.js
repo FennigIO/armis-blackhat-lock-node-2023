@@ -10,6 +10,10 @@
     const lockBtn = document.getElementById('lock');
     const codeText = document.getElementById('code-text');
 
+    
+    const modalHeader = document.getElementById('modal-header');
+    const modalBody = document.getElementById('modal-body');
+
     let isSubmitted = false;
 
     const successArrow = () => {
@@ -39,6 +43,11 @@
         clearInput();
     }
 
+    const changeModal = (header, body) => {
+        modalHeader.innerHTML = header;
+        modalBody.innerHTML = body;
+    }
+
     const submitForm = (e) => {
         e.preventDefault();
         if (!isSubmitted){
@@ -54,11 +63,15 @@
 
     const validateRespone = (msg) => {
         if (msg === 'error') {
-            errorArrow('ERROR.<br/>The code you entered is invalid.');
+            changeModal('Oh No!', `Unfortunately, your code didn't open the vault.<br/><br/>
+            This doesn't have to be your only attempt.<br/><br/>
+            Continue engaging on the app to earn more points to unlock another key.<br/><br/>
+            Don't forget, your connection with us has contributed to our donation to St. Jude's Childrens Hospital`);
         } else {
+            changeModal('CONGRATULATIONS, you won!!!', 'Choose a prize from the vault and enjoy!')
             successArrow();
-            displayModal();
         }
+        displayModal();
     }
 
     const lockSafe = (e) => {
