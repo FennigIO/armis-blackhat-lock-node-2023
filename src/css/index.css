@@ -1,0 +1,153 @@
+* {
+    outline: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Proxima Nova';
+}
+
+body {
+    background: url('../img/background.png') no-repeat;
+    background-size: cover;
+}
+
+.wrapper{
+    padding: 10%;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header .side{
+    flex-grow: 1;
+}
+
+.header .side.right-align{
+    text-align: right;
+}
+
+.header .side.left-align{
+    text-align: left;
+}
+
+.vault-logo{
+    display: inline-block;
+    width: 100%;
+    max-width: 160px;
+}
+
+.armis-logo{
+    display: inline-block;
+    width: 100%;
+    max-width: 223px;
+}
+
+.base-text{
+    color: #FFF;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 100px 0;
+}
+
+#form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+#input{
+    background-color: #383E6C;
+    border: 0px;
+    font-size: 3em;
+    color: #FFF;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 30%;
+}
+
+#arrow {
+    background: url('../img/arrow.png') no-repeat;
+    background-size: cover;
+    width: 71px;
+    height: 71px;
+    border: 0px;
+}
+
+#arrow.error {
+    background: url('../img/red-arrow.png') no-repeat;
+    background-size: cover;
+}
+
+#arrow.success {
+    background: url('../img/green-arrow.png') no-repeat;
+    background-size: cover;
+}
+
+#error-field {
+    color: #FFF;
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+#modal{
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+}
+
+#modal.show{
+    display: block;
+}
+
+.modal-container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFF;
+    border-radius: 10px;
+    width: 55%;
+    height: auto;
+    padding: 5%;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 30px;
+}
+
+.modal-header{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.modal-body{
+    font-size: 1.5em;
+}
