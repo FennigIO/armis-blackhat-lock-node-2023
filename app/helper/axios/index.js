@@ -1,9 +1,9 @@
 const axios = require('axios').default;
-const lockIP = `http://192.168.1.157`;
+const lockIP = `http://192.168.1.182`;
 
 exports.triggerUnlock = async () => {
   return axios
-    .get(`${lockIP}/relay/1?turn=on&timer=2`)
+    .get(`${lockIP}/relay/0?turn=on&timer=2`)
     .catch((err) => {
       return err.response;
     });
@@ -11,7 +11,7 @@ exports.triggerUnlock = async () => {
 
 exports.triggerLock = async () => {
     return axios
-      .get(`${lockIP}/relay/1?turn=off`)
+      .get(`${lockIP}/relay/0?turn=off`)
       .catch((err) => {
         return err.response;
       });
