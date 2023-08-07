@@ -1,5 +1,5 @@
 const axios = require('axios').default;
-const lockIP = `http://localhost`;
+const lockIP = `http://192.168.1.178:300`;
 
 exports.triggerUnlock = async () => {
   return axios
