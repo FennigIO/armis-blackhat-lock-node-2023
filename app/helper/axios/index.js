@@ -3,7 +3,7 @@ const lockIP = `http://192.168.1.157`;
 
 exports.triggerUnlock = async () => {
   return axios
-    .get(`${lockIP}/relay/1?turn=on`)
+    .get(`${lockIP}/relay/1?turn=on&timer=2`)
     .catch((err) => {
       return err.response;
     });
