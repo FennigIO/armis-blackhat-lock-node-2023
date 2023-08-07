@@ -66,7 +66,7 @@
             changeModal('Oh No!', `Unfortunately, your code didn't open the vault.<br/><br/>
             This doesn't have to be your only attempt.<br/><br/>
             Continue engaging on the app to earn more points to unlock another key.<br/><br/>
-            Don't forget, your connection with us has contributed to our donation to St. Jude's Childrens Hospital`);
+            Don't forget, your connection with us has contributed to our donation to St. Jude's Children's Research Hospital`);
         } else {
             changeModal('CONGRATULATIONS, you won!!!', 'Choose a prize from the vault and enjoy!')
             successArrow();
